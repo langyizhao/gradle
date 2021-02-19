@@ -11,9 +11,8 @@ function applicable() {
 }
 
 function gettool() {
-  apt
   pushd /tmp >/dev/null
-  curl -LO https://github.com/smagill/codenarc-muse/blob/main/CodeNarc-2.0.0.tgz?raw=true
+  curl -o CodeNarc-2.0.0.tgz -LO https://github.com/smagill/codenarc-muse/blob/main/CodeNarc-2.0.0.tgz?raw=true
   tar xzf CodeNarc-2.0.0.tgz
   popd >/dev/null
 }
