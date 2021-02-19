@@ -11,6 +11,7 @@ function applicable() {
 }
 
 function gettool() {
+  apt
   pushd /tmp >/dev/null
   curl -LO https://github.com/smagill/codenarc-muse/blob/main/CodeNarc-2.0.0.tgz?raw=true
   tar xzf CodeNarc-2.0.0.tgz
@@ -18,8 +19,7 @@ function gettool() {
 }
 
 function emit_results() { 
-  echo "$1"  | \
-    jq --slurp '.[] | .file = .location.file | .line = .location.line | .type = .code | del(.location) | del(.severity) |  del(.code) | del(.end)' | jq --slurp
+  echo "$1"
 }
 
 function run() {
