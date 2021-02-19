@@ -11,7 +11,6 @@ function applicable() {
 }
 
 function gettool() {
-  apt update >/dev/null && apt install -y golang >/dev/null
   pushd /tmp >/dev/null
   curl -LO https://github.com/smagill/codenarc-muse/blob/main/CodeNarc-2.0.0.tgz?raw=true
   tar xzf CodeNarc-2.0.0.tgz
@@ -25,7 +24,7 @@ function emit_results() {
 
 function run() {
   gettool
-  raw_results=$(/tmp/staticcheck -f json -fail "" ./...)
+  raw_results=$(/tmp/codenarc ./)
   emit_results "$raw_results"
 }
 
