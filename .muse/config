@@ -1,1 +1,2 @@
 customTools = [".muse/codenarc.sh"]
+tools = ["codenarc.sh"]
